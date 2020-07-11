@@ -1,0 +1,19 @@
+/**
+ * 
+ */
+package mainpack;
+
+/**
+ * @author 30697
+ *
+ */
+public class Ue {
+
+	/**
+	 * 
+	 */
+	public Ue() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

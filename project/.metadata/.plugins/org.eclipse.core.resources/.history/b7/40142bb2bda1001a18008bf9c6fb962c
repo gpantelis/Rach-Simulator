@@ -1,0 +1,23 @@
+package mainpack;
+
+public class Enode {
+
+	public static int preamble_number = 64;
+	public static int contention_based = 64;
+	
+	public Ue[] ue_assigned = new Ue[64];
+	public Ue[] ue_unassigned = new Ue[1000];
+	
+	public Enode() {
+		System.out.println("Enode deployed...");
+		System.out.println(ue_assigned[0]);
+	}
+
+	public void setUe(int i, Ue ue) {
+		this.ue_assigned[i-1] = ue;
+	}
+	
+	public Ue[] getUeArray() {
+		return ue_assigned;
+	}
+}

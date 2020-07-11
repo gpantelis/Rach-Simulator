@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package mainpack;
+
+/**
+ * @author 30697
+ *
+ * Ue is the3 class that represent the user equipment
+ */
+public class Ue {
+
+	//the preable that has chose 
+	public int preamble;
+
+	public Ue(int preamble) {
+		this.preamble = preamble;
+	}
+	
+	public void setPreamble(int preamble) {
+		this.preamble = preamble;
+	}
+	
+	public int getPreamble() {
+		return this.preamble;
+	}
+}

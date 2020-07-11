@@ -1,0 +1,22 @@
+package mainpack;
+import java.util.Random;
+import java.util.List; 
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Random rnd = new Random();
+		int number_ue = 0;
+		List<Ue> users; 
+		for (int i = 0; i <= number_ue; i++) {
+			
+		}
+		int preamble1 = rnd.nextInt(63) + 1;
+		System.out.print(preamble1);
+		Enode enode = new Enode();
+		//Ue user1 = new Ue();
+
+	}
+
+}

@@ -1,0 +1,33 @@
+package mainpack;
+
+
+//Class that represent a Enode
+
+public class Enode {
+	
+	//the number of all prembles (default 64)
+	public static int preamble_number = 64;
+	
+	//the number of preambles that used for contention based
+	public static int contention_based = 64;
+	
+	//this is an array that stores the User Equipment(UE) that
+	//are assigned to a preamble (NO Collision) 
+	public Ue[] ue_assigned = new Ue[64];
+	
+	//this is an array that stores the User Equipment(UE) that
+	//are not assigned to a preamble (Collision) 
+	public Ue[] ue_unassigned = new Ue[1000];
+	
+	public Enode() {
+		System.out.println("Enode deployed...");
+	}
+
+	public void setUe(int i, Ue ue) {
+		this.ue_assigned[i-1] = ue;
+	}
+	
+	public Ue[] getUeArray() {
+		return ue_assigned;
+	}
+}

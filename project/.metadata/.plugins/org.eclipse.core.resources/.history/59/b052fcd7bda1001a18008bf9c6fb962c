@@ -1,0 +1,25 @@
+/**
+ * 
+ */
+package mainpack;
+
+/**
+ * @author 30697
+ *
+ */
+public class Ue {
+
+	public int preamble;
+
+	public Ue(int preamble) {
+		this.preamble = preamble;
+	}
+	
+	public void setPreamble(int preamble) {
+		this.preamble = preamble;
+	}
+	
+	public int getPreamble() {
+		return this.preamble;
+	}
+}

@@ -1,0 +1,81 @@
+/**
+ * 
+ */
+package mainpack;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * @author 30697
+ *
+ * Ue is the3 class that represent the user equipment
+ */
+public class Ue {
+
+	
+  enum Status {
+	    PHASE_ONE,
+	    PHASE_TWO,
+	    PHASE_THREE,
+	    PHASE_FOUR
+	  }
+	
+	public static int number_of_ue = 0;
+	//the preable that has chose 
+	public int preamble;
+	public int id;
+	public double ta;
+	public int pusch;
+	public String bck;
+	public 
+	
+	
+	public static List<Ue> users; 
+	
+	{
+		number_of_ue += 1;
+	}
+	
+	public Ue(int preamble) {
+		this.preamble = preamble;
+		this.id = number_of_ue;
+		//users.add(this);
+	}
+	
+	public void setPreamble(int preamble) {
+		this.preamble = preamble;
+	}
+	
+	public int getPreamble() {
+		return this.preamble;
+	}
+	
+	public int getid() {
+		return this.id;
+	}
+	
+	public void setTA(double ta) {
+		this.ta = ta;
+	}
+	
+	public double getTa() {
+		return this.ta;
+	}
+	
+	public void setPSUCH(int pusch) {
+		this.pusch = pusch;
+	}
+	
+	public double getPSUCH() {
+		return this.pusch;
+	}
+	
+	public void setBCK(String bck) {
+		this.bck = bck;
+	}
+
+	public String getBCK() {
+		return this.bck;
+	}
+}

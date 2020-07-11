@@ -1,0 +1,81 @@
+package mainpack;
+import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+public class Main {
+
+	private static int slots = 0;
+	
+	public static void main(String[] args) {
+		
+		Random rnd = new Random();
+		Enode enode = new Enode();
+		int simulation_time = 20;
+		
+		
+		final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+		
+		    executorService.scheduleAtFixedRate(new Runnable() {
+		        @Override
+		        public void run() {
+		            myTask();
+		        }
+		    }, 0, 1, TimeUnit.SECONDS);
+		  if(slots > simulation_time) {
+			  executorService.shutdown();  
+		  }
+		     
+		//the number of the users that are trying to connect to the Enode
+		int number_ue = 19;
+		
+		//the UE list that want to connect to the Enode 
+		List<Ue> users = new ArrayList<>(); 
+		
+		//Create list of users
+		for (int i = 0; i < number_ue; i++) {
+			//create UE with random preamble selection (1-64)
+			users.add(new Ue(rnd.nextInt(63) + 1));
+		}
+		
+		//Here we "connect the UE" with the Enode 
+		// if another UE has already assigned to the Enode under the specific 
+		// preabmle , we put the UE to the list with the unassigned UE 
+        for (Ue ue:users ) {
+        	if(enode.ue_assigned[ue.preamble] == null) {
+        		enode.ue_assigned[ue.preamble] = ue;
+        	} else {
+        		enode.ue_unassigned[ue.preamble] = ue;
+        	}
+        	
+        }
+        //printArray(enode.ue_assigned);
+        
+       // printArray(enode.ue_unassigned);
+
+	}
+	
+	
+	
+	private static void myTask() {
+		 
+        	System.out.println("New slot");      	
+        	   slots++;
+	}
+	
+	
+	public static void printArray(Ue array[]) {
+		System.out.println("Preamble id" + " --> " + "Preamble signature");
+		 for (Ue ue:array ) {
+			 if(ue != null) {
+				 System.out.println(ue.getid() + " --> " + ue.getPreamble());
+				
+			 }
+			 
+		 }
+	}
+
+}

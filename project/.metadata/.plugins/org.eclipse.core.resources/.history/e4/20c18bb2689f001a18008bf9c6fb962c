@@ -1,0 +1,12 @@
+package mainpack;
+
+public class Enode {
+
+	public static int preamble_number = 64;
+	public static int contention_based = 64;
+	
+	public Enode() {
+		
+	}
+
+}

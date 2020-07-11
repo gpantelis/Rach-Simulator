@@ -1,0 +1,16 @@
+package mainpack;
+import java.util.Random;
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("hello");
+		Random rnd = new Random();
+		int preamble1 = rnd.nextInt(63) + 1;
+		System.out.print(preamble1);
+		Enode enode = new Enode();
+		//Ue user1 = new Ue();
+
+	}
+
+}
